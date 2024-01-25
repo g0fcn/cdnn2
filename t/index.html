@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDNN</title>
+    <link href="\logo" rel="shortcut icon">
+</head>
+<body style="max-width: 1024px;margin: auto;width: 100%">
+<style>
+    :root {
+        width: 100%;
+    }
+
+    .logo {
+        margin: 50px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+    }
+
+    footer {
+        text-align: center;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        color: #262626;
+    }
+</style>
+<h1 class="logo">CDN<span style="color: #0A76FAFF">N</span></h1>
+<p>
+    CDNN是本站(www.yt-blog.top)自行搭建的公益CDN(Content Delivery
+    Network，内容分发网络)，使用数据库存储，支持Github，NPM(暂时不开放)，CDNJS,Gitee,缓存时常6小时，部署于Vercel，目录结构于Jsd类似。
+</p>
+<b>Github示例:</b>
+<p>指定分支:</p>
+<span style="display: block;width: 100%;background-color: #e2e2e2;text-align: center;padding: 10px">
+    <script>document.write(window.location.origin)</script>/gh/:owner/:repo@:branch/:path
+</span>
+<p>不指定分支(不建议):</p>
+<span style="display: block;width: 100%;background-color: #e2e2e2;text-align: center;padding: 10px">
+    <script>document.write(window.location.origin)</script>/gh/:owner/:repo/:path
+</span>
+<p>强制更新(不要反复更新):</p>
+<span style="display: block;width: 100%;background-color: #e2e2e2;text-align: center;padding: 10px">
+    <script>document.write(window.location.origin)</script>/api/:owner/:repo@:branch/:path
+</span>
+<br>
+<b>CDNJS示例:</b>
+<br>
+<br>
+<span style="display: block;width: 100%;background-color: #e2e2e2;text-align: center;padding: 10px">
+    <script>document.write(window.location.origin)</script>/cdnjs/:package/:version/:path
+</span>
+<br>
+<b>Gitee示例(兼容支持):</b>
+<br>
+<br>
+<span style="display: block;width: 100%;background-color: #e2e2e2;text-align: center;padding: 10px">
+    <script>document.write(window.location.origin)</script>/ge/:owner/:repo@:branch/:path
+</span>
+<br><br><br>
+<h3 style="text-align: center">CDNN服务政策</h3>
+<br>
+<pre style="width: 100%;background-color: #e2e2e2;padding: 10px">
+    1.禁止大量请求，反复获取，对本站造成影响
+    2.不得使用其获得违法内容，否则本站概不负责
+    3.如果存储了隐私内容，并且使用使用CDN缓存后，导致其无法删除，本站不会理睬
+</pre>
+<footer>© CDNN</footer>
+</body>
+</html>

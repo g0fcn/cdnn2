@@ -1,0 +1,160 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>文件列表</title>
+    <link rel="shortcut icon" href="\logo">
+</head>
+<body style="max-width: 1024px;margin: auto">
+<style>
+    .logo {
+        margin: 50px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+    }
+
+    .List {
+        border-radius: 5px;
+        border: 1px solid #d0d7de;
+        overflow: hidden;
+        margin-bottom: 40px;
+    }
+
+    .List > .header {
+        height: 50px;
+        background-color: #f6f8fa;
+        width: 100%;
+    }
+
+    .List > .body > li {
+        display: flex;
+        height: 35px;
+        align-content: center;
+        align-items: center;
+        border-top: 1px solid #d8dee4;
+    }
+
+    .List > .body > li:hover {
+        background-color: #f6f8fa;
+    }
+
+    .List > .body > li > a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .List > .body > li > a:hover {
+        text-decoration: underline;
+        color: #0969da;
+    }
+
+    .dropdown-caret {
+        border-bottom-color: #0000;
+        border-left-color: #0000;
+        border-right-color: #0000;
+        border-style: solid;
+        border-width: 4px 4px 0;
+        content: "";
+        display: inline-block;
+        height: 0;
+        vertical-align: middle;
+        width: 0;
+        margin-left: 4px;
+        opacity: .8;
+    }
+
+    .btn-box > .btn {
+        position: relative;
+        padding: 5px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid;
+        border-radius: 6px;
+        appearance: none;
+        color: #000;
+        background-color: #f6f8fa;
+        border-color: #1b1f2426;
+        box-shadow: 0 1px 0 #1b1f240a, inset 0 1px 0 #ffffff40;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn-box>.btn>a>p{
+        margin: 0;
+        display: inline-block;
+        max-width: 125px;
+        vertical-align: top;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 0;
+    }
+    footer{
+        text-align: center;
+        margin-bottom: 30px;
+        color: #262626;
+    }
+</style>
+<h1 class="logo">CDN<span style="color: #0A76FAFF">N</span></h1>
+<div class="btn-box" style="display:flex;margin: 0 0 16px 0;justify-content: space-between;height: 32px;">
+    <a class="btn">
+        <svg text="gray" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+             data-view-component="true" class="octicon octicon-git-branch" style="
+    margin-right: 4px;
+    color: #57606a;
+    vertical-align: text-bottom;
+    fill: currentColor;">
+            <path fill-rule="evenodd"
+                  d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path>
+        </svg>
+        <p>main</p><span class="dropdown-caret"></span></a>
+    <a class="btn" style="
+    color: #ffffff;
+    background-color: #2da44e;
+    border-color: #1b1f2426;
+">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
+             class="octicon octicon-code mr-1" style="
+    fill: currentColor;
+    color: #ffffffcc;
+    margin-right: 4px;
+">
+            <path fill-rule="evenodd"
+                  d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"></path>
+        </svg>
+        <p>下载</p></a>
+</div>
+<div class="List">
+    <div class="header">
+
+    </div>
+    <div class="body">
+        <% for (i in ls){ %>
+        <li>
+            <% if (ls[i].type === 'file'){ %>
+                <svg aria-label="File" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                     data-view-component="true" class="octicon octicon-file color-fg-muted" style="margin: 0 16px;">
+                    <path fill-rule="evenodd"
+                          d="M3.75 1.5a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 00.25-.25V6h-2.75A1.75 1.75 0 019 4.25V1.5H3.75zm6.75.062V4.25c0 .138.112.25.25.25h2.688a.252.252 0 00-.011-.013l-2.914-2.914a.272.272 0 00-.013-.011zM2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0113.25 16h-9.5A1.75 1.75 0 012 14.25V1.75z"></path>
+                </svg>
+            <% } else { %>
+                <svg aria-hidden="true" aria-label="Directory"
+                     class="octicon octicon-file-directory-fill hx_color-icon-directory"
+                     data-view-component="true" height="16" style="color: #54aeff;fill: currentColor;margin: 0 16px;"
+                     version="1.1" viewBox="0 0 16 16"
+                     width="16">
+                    <path d="M1.75 1A1.75 1.75 0 000 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0016 13.25v-8.5A1.75 1.75 0 0014.25 3H7.5a.25.25 0 01-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75z"></path>
+                </svg>
+            <% } %>
+            <a href="<%= ls[i].url %>"><%= ls[i].name %></a></li>
+        <% } %>
+    </div>
+</div>
+<footer>© CDNN</footer>
+</body>
+</html>
